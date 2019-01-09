@@ -10,7 +10,7 @@ import { LoadingController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  user: any;
+  user: any; 
   userReady: boolean = false;
 
   constructor(
