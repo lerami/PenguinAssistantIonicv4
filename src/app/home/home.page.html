@@ -1,12 +1,12 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://beta.ionicframework.com/docs/">docs</a> will be your guide.</p>
+<ion-content *ngIf='userReady'>
+  <ion-card>
+    <ion-img [src]="user.picture"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{user.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{user.email}}</p>
+    </ion-card-content>
+    <ion-button expand="block" (click)="doGoogleLogout()">Log Out</ion-button>
+  </ion-card>
 </ion-content>
