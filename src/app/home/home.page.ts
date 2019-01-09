@@ -11,7 +11,7 @@ import { LoadingController } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
   user: any; 
-  userReady: boolean = false;
+  userReady: boolean = false; 
 
   constructor(
     private googlePlus: GooglePlus,
