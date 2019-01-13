@@ -83,7 +83,7 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^2.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-googleplus" spec="^6.0.0">
-        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.8sm6hvckhdac6gt4atfsevhnc2nqr1hg-242087552758" />
+        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.qv032me9i8qojk90ta9pint0gjtq2vs4-242087552758" />
     </plugin>
     <plugin name="cordova-plugin-nativestorage" spec="^2.3.2" />
     <engine name="android" spec="7.0.0" />
