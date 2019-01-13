@@ -28,7 +28,7 @@ export class LoginPage {
     this.presentLoading(loading);
     this.googlePlus.login({
       'scopes': '', // optional - space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
-      'webClientId': '242087552758-j3bb9bfigas2ggml66fbgk9vhotnq8ho.apps.googleusercontent.com', // optional - clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
+      'webClientId': '242087552758-8sm6hvckhdac6gt4atfsevhnc2nqr1hg.apps.googleusercontent.com', // optional - clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
       'offline': true, // Optional, but requires the webClientId - if set to true the plugin will also return a serverAuthCode, which can be used to grant offline access to a non-Google server
       })
       .then(user => {
@@ -41,11 +41,11 @@ export class LoginPage {
         .then(() => {
            this.router.navigate(["/home"]);
         }, (error) => {
-          console.log(error);
+          console.log("error when setting item in native storage : "+error);
         })
         loading.dismiss();
       }, err => {
-        console.log(err);
+        console.log("error when login with google plus :"+err);
         if(!this.platform.is('cordova')){
           this.presentAlert();
         }
