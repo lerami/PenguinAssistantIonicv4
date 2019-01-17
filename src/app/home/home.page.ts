@@ -29,13 +29,13 @@ export class HomePage implements OnInit {
     await loading.present();
     this.nativeStorage.getItem('access_token')
       .then(access_token => {
-        this.http.get('https://people.googleapis.com/v1/people/me/connections', { personFields: 'emailAddresses' }, { Accept: 'application/json', Authorization: access_token })
+        this.http.get('https://people.googleapis.com/v1/people/me/connections?access_token=access_token', { personFields: 'emailAddresses' }, { Accept: 'application/json', Authorization: 'Bearer '+access_token })
           .then(res => {
             this.connections = res.data.connections;
             this.connectionsReady = true;
           })
           .catch(err => {
-            console.log(err.status, err.message, err.headers);
+            console.log(err.error.code, err.error.message, err.error.status);
           })
         loading.dismiss();
       }, error => {
