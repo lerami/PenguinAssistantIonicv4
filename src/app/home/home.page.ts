@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { LoadingController } from '@ionic/angular';
-import { HTTP } from '@ionic-native/http';
+import { HTTP } from '@ionic-native/http/ngx';
 
 @Component({
   selector: 'app-home',
