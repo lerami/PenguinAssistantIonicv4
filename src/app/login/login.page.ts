@@ -27,17 +27,18 @@ export class LoginPage {
     });
     this.presentLoading(loading);
     this.googlePlus.login({
-      'scopes': '', // optional - space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
+      'scopes': 'https://www.googleapis.com/auth/contacts.readonly', // optional - space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
       'webClientId': '242087552758-qv032me9i8qojk90ta9pint0gjtq2vs4.apps.googleusercontent.com', // optional - clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
       'offline': true, // Optional, but requires the webClientId - if set to true the plugin will also return a serverAuthCode, which can be used to grant offline access to a non-Google server
       })
-      .then(user => {
+      .then(res => {
         //save user data on the native storage
         this.nativeStorage.setItem('google_user', {
-          name: user.displayName,
-          email: user.email,
-          picture: user.imageUrl
+          name: res.displayName,
+          email: res.email,
+          picture: res.imageUrl
         })
+        this.nativeStorage.setItem('access_token',res.accessToken)
         .then(() => {
            this.router.navigate(["/home"]);
         }, (error) => {
