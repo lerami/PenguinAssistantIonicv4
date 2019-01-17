@@ -1,7 +1,7 @@
 <ion-content *ngIf='userReady'>
   <ion-card>
     <ion-list *ngFor='let connection of connections'>
-      <ion-item>{connection.emailAddress}</ion-item>
+      <ion-item>{{connection.emailAddress}}</ion-item>
     </ion-list>
     <ion-button expand="block" (click)="doGoogleLogout()">Log Out</ion-button>
   </ion-card>
