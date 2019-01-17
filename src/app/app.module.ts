@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { HTTP } from '@ionic-native/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
     SplashScreen,
     GooglePlus,
     NativeStorage,
+    HTTP,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

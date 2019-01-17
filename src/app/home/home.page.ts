@@ -15,11 +15,11 @@ export class HomePage implements OnInit {
   connectionsReady: boolean = false;
 
   constructor(
+    private http: HTTP,
     private googlePlus: GooglePlus,
     private nativeStorage: NativeStorage,
     public loadingController: LoadingController,
-    private router: Router,
-    private http: HTTP
+    private router: Router
   ) { }
 
   async ngOnInit() {
