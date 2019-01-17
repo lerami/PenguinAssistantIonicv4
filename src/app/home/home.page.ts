@@ -49,7 +49,6 @@ export class HomePage implements OnInit {
       .then(res => {
         //user logged out so we will remove him from the NativeStorage
         this.nativeStorage.remove('access_token');
-        this.nativeStorage.remove('google_user');
         this.router.navigate(["/login"]);
       }, err => {
         console.log(err);
