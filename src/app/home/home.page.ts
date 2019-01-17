@@ -31,6 +31,7 @@ export class HomePage implements OnInit {
       .then(access_token => {
         this.http.get('https://people.googleapis.com/v1/people/me/connections?access_token=access_token', { personFields: 'emailAddresses' }, { Accept: 'application/json', Authorization: 'Bearer '+access_token })
           .then(res => {
+            console.log(res.data);
             this.connections = res.data.connections;
             this.connectionsReady = true;
           })
