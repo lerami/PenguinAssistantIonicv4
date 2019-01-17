@@ -33,6 +33,7 @@ export class LoginPage {
       })
       .then(res => {
         //save user data on the native storage
+        console.log(res);
         this.nativeStorage.setItem('access_token',res.accessToken)
         .then(() => {
            this.router.navigate(["/home"]);
