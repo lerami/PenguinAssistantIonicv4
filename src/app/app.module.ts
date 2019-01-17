@@ -16,10 +16,11 @@ import { HTTP } from '@ionic-native/http/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, HTTP, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
     SplashScreen,
+    HTTP,
     GooglePlus,
     NativeStorage,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
