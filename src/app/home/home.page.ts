@@ -30,7 +30,7 @@ export class HomePage implements OnInit {
     this.nativeStorage.getItem('access_token')
       .then(access_token => {
         console.log(access_token);
-        this.http.get('https://people.googleapis.com/v1/people/me/connections', { personFields: 'names,emailAddresses', access_token: access_token }, { Accept: 'application/json' })
+        this.http.get('https://people.googleapis.com/v1/people/me/connections', { personFields: 'names,addresses', access_token: access_token }, { Accept: 'application/json' })
           .then(res => {
             console.log(res.data);
             this.connections = res.data.connections;
